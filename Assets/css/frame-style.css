@@ -1,0 +1,244 @@
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* Page body background - light gray (original separate background) */
+body {
+  min-height: 100vh;
+  position: relative;
+  font-family: system-ui, 'Segoe UI', sans-serif;
+  background-color: #36454F;  /* page body background remains light gray */
+  }
+
+    /* ===== FRAME BORDER WITH #000000 BACKGROUND ===== */
+    /* This creates a #000000 background area behind the frame border */
+.frame-lining {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000;  /* #000000 background for the frame area */
+  pointer-events: none;
+  z-index: 9998;
+  }
+
+/* The actual dashed border overlay */
+.frame-border {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  /* border: 1px dashed #aaaaaa;    neutral dashed frame */
+  pointer-events: none;
+  z-index: 9999;
+    }
+
+/*========================================*/
+
+    .frame_corners_bottom {
+      position: fixed;
+      top: 1.3rem;
+      left: 1.3rem;
+      right: 1.3rem;
+      bottom: 1.3rem;
+      pointer-events: none;
+      z-index: 10000;
+    }
+    .corner_frame_bottom {
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      background: whitesmoke;      /* solid elegant dark tone */
+      opacity: 0.85;
+      transition: all 0.2s ease;
+      /* default clip-path fallback: will be overridden per corner */
+      clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+    }
+    /* left-top corner: triangle pointing top-left (cut upper-left shape) */
+    .corner_frame_bottom.is-left-top {
+      top: -12px;
+      left: -12px;
+      clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+     
+      transform: rotate(0deg);
+    }
+    /* right-top corner: triangle pointing top-right */
+    .corner_frame_bottom.is-right-top {
+      top: -12px;
+      right: -12px;
+      clip-path: polygon(100% 0%, 100% 100%, 0% 0%);
+     
+    }
+    /* left-bottom corner: triangle pointing bottom-left */
+    .corner_frame_bottom.is-left-bottom {
+      bottom: -12px;
+      left: -12px;
+      clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+     
+    }
+    /* right-bottom corner: triangle pointing bottom-right */
+    .corner_frame_bottom.is-right-bottom {
+      bottom: -12px;
+      right: -12px;
+      clip-path: polygon(100% 100%, 0% 100%, 100% 0%);
+     
+    }
+
+    /*===============================*/
+    .frame_corners_top {
+      position: fixed;
+      top: 1.38rem;
+      left: 1.38rem;
+      right: 1.38rem;
+      bottom: 1.38rem;
+      pointer-events: none;
+      z-index: 10001;
+    }
+    .corner_frame_top {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background-color: #000000;      /* solid elegant dark tone */
+      opacity: 0.85;
+      transition: all 0.2s ease;
+      border-radius: 4px;
+      /* default clip-path fallback: will be overridden per corner */
+      clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+    }
+    /* left-top corner: triangle pointing top-left (cut upper-left shape) */
+    .corner_frame_top.is-left-top {
+      top: -12px;
+      left: -12px;
+      clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+      background-color: #000000;
+      transform: rotate(0deg);
+       border-radius: 0 0 4px 0; 
+    }
+    /* right-top corner: triangle pointing top-right */
+    .corner_frame_top.is-right-top {
+      top: -12px;
+      right: -12px;
+      clip-path: polygon(100% 0%, 100% 100%, 0% 0%);
+      background-color: #000000;
+      border-radius: 0 0 0 4px;
+    }
+    /* left-bottom corner: triangle pointing bottom-left */
+    .corner_frame_top.is-left-bottom {
+      bottom: -12px;
+      left: -12px;
+      clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+      background-color: #000000;
+      border-radius: 0 4px 0 0;
+    }
+    /* right-bottom corner: triangle pointing bottom-right */
+    .corner_frame_top.is-right-bottom {
+      bottom: -12px;
+      right: -12px;
+      clip-path: polygon(100% 100%, 0% 100%, 100% 0%);
+      background-color: #000000;
+      border-radius: 4px 0 0 0;
+    }
+
+
+
+/*============================ Menu & Status bar ===========================*/
+
+    .frame-menu-status-bar {
+      position: fixed;
+      width: 21%;
+      height: 32px;
+      background: black;   
+      border-radius: 2px;
+      left: 39.5%;
+      z-index: 10001;
+     
+    }
+
+    .frame-menu-bar {
+      top: 0;
+      transform: perspective(28px) rotateX(-14deg) skew(-9deg);
+      transform-origin: center center;
+    }
+
+    .frame-status-bar {
+      bottom: 0;
+      
+      transform: perspective(28px) rotateX(14deg) skew(9deg);
+      transform-origin: center center;
+    }
+
+
+    .frame-scroll-bar {
+
+      position: fixed;
+      width:  32px;
+      height: 34vh;
+      background: black;   
+      border-radius: 2px;
+      top: 33vh;
+      z-index: 10001;
+
+    }
+
+    .frame-scroll-bar-left {
+      left: 0;
+      transform: perspective(45px) rotateY(14deg) skewY(9deg);
+      transform-origin: center center;
+    }
+
+    .frame-scroll-bar-right {
+      right: 0;
+      transform: perspective(40px) rotateY(-14deg) skewY(-9deg);
+      transform-origin: center center;
+    }
+
+
+.page-body {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  z-index: 10000;
+}
+
+/* simple inner container – only structure, no decoration */
+.content-area {
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 30px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;  /* matches page body background */
+  border-radius: 0.72rem;
+}
+
+/* optional: subtle placeholder text to show structure */
+.placeholder {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* responsive: frame stays intact on all devices */
+@media (max-width: 640px) {
+  .frame-border {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+  .page-body {
+    padding: 16px;
+  }
+}
