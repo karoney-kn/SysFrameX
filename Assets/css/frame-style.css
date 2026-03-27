@@ -160,14 +160,14 @@ body {
 
     .frame-menu-bar {
       top: 0;
-      transform: perspective(28px) rotateX(-14deg) skew(-9deg);
+      transform: perspective(28px) rotateX(-13deg) skew(-8deg);
       transform-origin: center center;
     }
 
     .frame-status-bar {
       bottom: 0;
       
-      transform: perspective(28px) rotateX(14deg) skew(9deg);
+      transform: perspective(28px) rotateX(13deg) skew(8deg);
       transform-origin: center center;
     }
 
@@ -186,13 +186,13 @@ body {
 
     .frame-scroll-bar-left {
       left: 0;
-      transform: perspective(45px) rotateY(14deg) skewY(9deg);
+      transform: perspective(45px) rotateY(13deg) skewY(8deg);
       transform-origin: center center;
     }
 
     .frame-scroll-bar-right {
       right: 0;
-      transform: perspective(40px) rotateY(-14deg) skewY(-9deg);
+      transform: perspective(40px) rotateY(-13deg) skewY(-8deg);
       transform-origin: center center;
     }
 
